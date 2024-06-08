@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 
 public class LaptopsAndNotebooksTest extends BaseTest {
     String baseURL = "https://tutorialsninja.com/demo/index.php";
-
     @Before
     public void setupTest() {
         openBrowser(baseURL);
@@ -38,5 +37,6 @@ public class LaptopsAndNotebooksTest extends BaseTest {
         Quantity.sendKeys("2");
         driver.findElement(By.xpath("//i[@class='fa fa-refresh']")).click();
         driver.findElement(By.xpath("//a[@class='btn btn-primary']")).click();
+
     }
 }

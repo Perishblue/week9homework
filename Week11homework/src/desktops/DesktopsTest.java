@@ -5,12 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
 public class DesktopsTest extends BaseTest {
     String baseURL = "https://tutorialsninja.com/demo/index.php";
-
     @Before
     public void setupTest() {
         openBrowser(baseURL);
@@ -23,6 +23,7 @@ public class DesktopsTest extends BaseTest {
         driver.findElement(By.xpath("//option[text()='Name (Z - A)']")).click();
     }
 
+
     @Test
     public void verifyProductAddedToShoppingCartSuccessfully() {
         driver.findElement(By.xpath("//a[text()='Desktops']")).click();
@@ -33,11 +34,11 @@ public class DesktopsTest extends BaseTest {
         WebElement DeliveryDate = driver.findElement(By.xpath("//div[contains(@class,'input-group date')]//input[@value='2011-04-22']"));
         DeliveryDate.sendKeys("2022-11-30");
         driver.findElement(By.xpath("//div[contains(@class,'form-group')]//input[@id='input-quantity']")).clear();
-        WebElement Qty =driver.findElement(By.xpath("//div[contains(@class,'form-group')]//input[@id='input-quantity']"));
+        WebElement Qty = driver.findElement(By.xpath("//div[contains(@class,'form-group')]//input[@id='input-quantity']"));
         Qty.sendKeys("1");
         driver.findElement(By.xpath("//div[contains(@class,'form-group')]//button[@id='button-cart']")).click();
         driver.findElement(By.xpath("//button[@class='btn btn-inverse btn-block btn-lg dropdown-toggle']")).click();
         driver.get("https://tutorialsninja.com/demo/index.php?route=checkout/cart");
 
-            }
+    }
         }
